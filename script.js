@@ -9,13 +9,12 @@ const progressBar =
 document.getElementById('progress-bar');
 const levelText = 
 document.getElementById('level-text');
-const muteBtn = 
-document.getElementById('mute-btn');
-const muteIcon = 
-document.getElementById('mute-icon');
+const muteBtn = document.getElementById('mute-btn');
+const muteIcon = document.getElementById('mute-icon');
+let isMuted = false;
 const menuButton = document.getElementById('menu-button');
 const shopZone = document.getElementById('shop-zone');
-let isMuted = false;
+
 let level = 1;
 const clicksPerLevel = 25;
 let clicks = 0;
@@ -58,10 +57,14 @@ monster.addEventListener('click', (e) => {
     }, 3000)
 })
 
+
+
 muteBtn.addEventListener('click', () => {
     isMuted = !isMuted;
     clickSound.muted = isMuted;
-    muteIcon.src = isMuted ? 'assets/dinamikOFF.png' : 'assets/dinamikOn.png';
+    muteIcon.style.backgroundImage = isMuted
+        ? "url('assets/dinamikOFF.png')"
+        : "url('assets/dinamikOn.png')";
 });
 
 menuButton.addEventListener('click', () => {
