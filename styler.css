@@ -10,6 +10,13 @@ body {
     overflow: hidden;
     background-color: #f0f0f0;
 }
+img {
+    content-visibility: auto;
+    pointer-events: auto;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
 #monster {
     width: 600px;
     height: auto;
