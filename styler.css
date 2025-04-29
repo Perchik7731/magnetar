@@ -10,19 +10,18 @@ body {
     overflow: hidden;
     background-color: #f0f0f0;
 }
-img {
-    content-visibility: auto;
-    pointer-events: auto;
-    -webkit-user-drag: none;
-    -webkit-touch-callout: none;
-    user-select: none;
-}
+
 #monster {
     width: 600px;
-    height: auto;
+    height: 600px;
     cursor: pointer;
+    background-image: url('assets/monster-clickelement.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     transition: transform 0.1s ease;
     transform: rotate(-10deg);
+    user-select: none;
 }
 #monster:active {
     transform: scale(1.1);
