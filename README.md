@@ -1,5 +1,5 @@
 # Игра Кликер Magnetar
 # Интерфейс =>
-![My Image](AssetsForReadME/screenshot1.jpg)
+![My Image](AssetsForReadME/screenshotMain.jpg)
 # Возможности Магазина =>
 ![My Image](AssetsForReadME/screenshot2.jpg)
