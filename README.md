@@ -1,5 +1,5 @@
 # Игра Кликер Magnetar
 # Интерфейс =>
-![alt text](AssetsForReadME/screenshot1.jpg)
+<img src="AssetsForReadME/screenshot1.jpg" alt="Alt text" title="Optional title">
 # Возможности Магазина =>
 
