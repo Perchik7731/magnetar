@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker-Magnetar</title>
+    <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styler.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="main-zone">
+
+        </div>
+
+        <button id="menu-button">Магазин</button>
+
+        <div id="shop-zone">
+            <div class="upgrade-item">
+                <div class="upgrade-info">
+                    <h3>Медный Курсор</h3>
+                    <p>+5 Клик</p>
+                </div>
+                <img src="assets/icon.ico" alt="Иконка">
+            </div>
+            <div class="upgrade-item">
+                <div class="upgrade-info">
+                    <h3>Серебряный Курсор</h3>
+                    <p>+10 кликов</p>
+                </div>
+                <img src="assets/icon.ico" alt="Иконка">
+            </div>
+        </div>
+
+        <div id="click-counter">
+            <span id="clicks-count">0</span>
+            <img id="energy-icon" src="assets/monster-clickelement.png"
+            alt="Энергетик">
+        </div>
+        <img src="assets/monster-clickelement.png" alt="Монстер" id="monster">
+        <div id="progress-wrapper">
+            <div id="progress-bar"></div>
+            <div id="level-text">Уровень 1</div>
+        </div>
+    </div>
+
+    
+    
+    <button id="mute-btn">
+        <img id="mute-icon" src="assets/dinamikOn.png" alt="Звук">
+    </button>
+    <audio id="click-sound" src="assets/ClickSound.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

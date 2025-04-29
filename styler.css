@@ -1,0 +1,159 @@
+body {
+    background-image: url("assets/fon1.jpeg"); 
+    background-size: cover; /* растяжение на весь экран */
+    background-repeat: no-repeat; /* отключает повторение фона */
+    margin: 0; /* отступы браузера */
+    height: 100vh; 
+    display: flex; /*  */
+    justify-content: center; /* центрирует контент по горизонтали */
+    align-items: center; /* центрирует контент по вертикали */
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+#monster {
+    width: 600px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    transform: rotate(-10deg);
+}
+#monster:active {
+    transform: scale(1.1);
+}
+.energy {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    pointer-events: none;
+    animation: fly 0.6s ease-out forwards;
+}
+@keyframes fly {
+    to {
+        transform: translate(var(--x),
+        var(--y)) scale(0.5);
+        opacity: 0;
+    }
+}
+#game-container {
+    position: relative;
+    display: inline-block;
+}
+#click-counter{
+    font-size: 50px;
+    font-family: 'Comic Sans MS', 'Fredoka', cursive;
+    color: white;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+#clicks-count {
+    margin-right: 5px;
+}
+#energy-icon{
+    width: 60px;
+    height: auto;
+    margin-left: 5px;
+}
+#mute-btn {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#mute-btn img {
+    width: 100px;
+    height: 100px;
+}
+
+#progress-wrapper {
+    width: 300px;
+    height: 50px;
+    background-color: #eee;
+    border: 2px solid #555;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px auto 0;
+    position: relative;
+}
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #0b7d91, #454ec2);
+    transition: width 0.3s ease;
+}
+#level-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 30px;
+    color: black;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+#main-zone {
+    flex: 1;
+    position: relative;
+}
+
+#menu-button {
+    position: fixed; /* Меняем на fixed, чтобы кнопка не двигалась с прокруткой */
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    height: 70px;
+    background-color: rgb(185, 196, 201);
+    border: none;
+    border-radius: 12px;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#shop-zone {
+    position: fixed;
+    left: -600px; /* Сначала панель скрыта */
+    top: 0;
+    width: 600px;
+    height: 100%;
+    background-color: transparent;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: left 0.3s ease-in-out; /* Плавное движение */
+    overflow-y: auto; /* Добавляем прокрутку */
+}
+
+#shop-zone.open {
+    left: 0; /* Панель перемещается на 0px слева, открываясь */
+}
+
+.upgrade-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    
+}
+
+.upgrade-info {
+    flex: 1;
+    padding-right: 10px;
+}
+
+#shop-zone img {
+    width: 50px;
+    height: 50px;
+}
