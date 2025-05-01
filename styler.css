@@ -163,6 +163,8 @@ body {
     flex: 1;
     padding-right: 10px;
     color: white;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
 }
 
 #shop-zone img {
