@@ -9,6 +9,7 @@ const muteBtn = document.getElementById('mute-btn');
 const muteIcon = document.getElementById('mute-icon');
 const menuButton = document.getElementById('menu-button');
 const shopZone = document.getElementById('shop-zone');
+const buySound = document.getElementById('buy-sound');
 
 const clickPowerDisplay = document.getElementById('click-power');
 const passiveIncomeDisplay = document.getElementById('passive-income');
@@ -109,6 +110,9 @@ document.querySelectorAll('.upgrade-item').forEach(item => {
                 clickPowerDisplay.textContent = clickPower;
             }
 
+             // Воспроизводим звук покупки
+             buySound.currentTime = 0; // Чтобы звук играл заново, если клики быстрые
+             buySound.play();
             // Увеличение стоимости и обновление в DOM
             cost = Math.floor(cost * 1.5);
             item.setAttribute('data-cost', cost);
