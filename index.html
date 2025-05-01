@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styler.css">
 </head>
 <body>
-
+    
     <div id="game-container">
         <div id="main-zone">
 
@@ -17,31 +17,48 @@
         <button id="menu-button">Магазин</button>
 
         <div id="shop-zone">
-            <div class="upgrade-item">
+            <div class="upgrade-item" id="autoclicker-upgrade" data-cost="50" 
+            data-bonus="5">
                 <div class="upgrade-info">
-                    <h3>Медный Курсор</h3>
-                    <p>+5 За Клик</p>
+                    <h3>Автокликер</h3>
+                    <p>+5 энергетик в секунду</p>
+                    <p class="upgrade-cost">50</p>
                 </div>
                 <img src="assets/icon.ico" alt="Иконка">
             </div>
-            <div class="upgrade-item">
+            <div class="upgrade-item" data-cost="100" data-bonus="10">
                 <div class="upgrade-info">
                     <h3>Серебряный Курсор</h3>
                     <p>+10 За Клик</p>
+                    <p class="cost">100</p>
                 </div>
                 <img src="assets/icon.ico" alt="Иконка">
             </div>
         </div>
-
-        <div id="click-counter">
-            <span id="clicks-count">0</span>
-            <img id="energy-icon" src="assets/monster-clickelement.png"
-            alt="Энергетик" >
-        </div>
-        <div id="monster" alt="Монстер"></div>
-        <div id="progress-wrapper">
-            <div id="progress-bar"></div>
-            <div id="level-text">Уровень 1</div>
+        
+            
+        <div id="main-content">
+            <div id="click-power-display">
+                за клик: <span id="click-power">1</span>
+                <img src="assets/monster-clickelement.png" alt="Энергетик" class="inline-icon">
+            </div>
+        
+            <div id="passive-income-display">
+                в секунду: <span id="passive-income">0</span>
+                <img src="assets/monster-clickelement.png" alt="Энергетик" class="inline-icon">
+            </div>
+        
+            <div id="click-counter">
+                <span id="clicks-count">0</span>
+                <img class="inline-icon" src="assets/monster-clickelement.png" alt="Энергетик">
+            </div>
+        
+            <div id="monster"></div>
+        
+            <div id="progress-wrapper">
+                <div id="progress-bar"></div>
+                <div id="level-text">Уровень 1</div>
+            </div>
         </div>
     </div>
 

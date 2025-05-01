@@ -15,12 +15,16 @@ let isMuted = false;
 const menuButton = document.getElementById('menu-button');
 const shopZone = document.getElementById('shop-zone');
 
+
 let level = 1;
 const clicksPerLevel = 25;
-let clicks = 0;
+
+
+
+
 
 monster.addEventListener('click', (e) => {
-    clicks++;
+    clicks += clickPower;
     counter.textContent = `${clicks}`;
 
     const progress = (clicks % clicksPerLevel) / clicksPerLevel * 100;
@@ -71,3 +75,49 @@ menuButton.addEventListener('click', () => {
     // Переключаем класс 'open' для панели
     shopZone.classList.toggle('open');
 });
+let clicks = 0;
+let clickPower = 1;
+let passiveIncome = 0;
+const clickPowerDisplay = document.getElementById('click-power');
+const passiveIncomeDisplay = document.getElementById('passive-income'); // Инициализируем отображение пассивного дохода
+
+// Обработка покупок улучшений
+document.querySelectorAll('.upgrade-item').forEach(item => {
+    let cost = parseInt(item.getAttribute('data-cost'));
+    const bonus = parseInt(item.getAttribute('data-bonus'));
+    const isAutoclicker = item.id === 'autoclicker-upgrade';
+    
+    item.addEventListener('click', () => {
+        if (clicks >= cost) {
+            clicks -= cost;
+            counter.textContent = clicks;
+            
+            if (isAutoclicker) {
+                passiveIncome += bonus;
+                passiveIncomeDisplay.textContent = passiveIncome;  // Обновляем пассивный доход
+                
+                // Увеличиваем цену и обновляем отображение
+                cost = Math.floor(cost * 1.5);
+                item.setAttribute('data-cost', cost);
+                item.querySelector('.upgrade-cost').textContent = `Цена: ${cost}`;
+            } else {
+                clickPower += bonus;
+                clickPowerDisplay.textContent = clickPower;
+            }
+
+            // Анимация
+            item.classList.add('clicked');
+            setTimeout(() => {
+                item.classList.remove('clicked');
+            }, 300);
+        }
+    });
+});
+
+// Добавляем обработку пассивного дохода (добавляем очки каждую секунду)
+setInterval(() => {
+    clicks += passiveIncome;
+    counter.textContent = clicks;
+}, 1000);
+
+
