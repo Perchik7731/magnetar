@@ -12,7 +12,7 @@ body {
 }
 
 #monster {
-    width: 600px;
+    width: 250px;
     height: 600px;
     cursor: pointer;
     background-image: url('assets/monster-clickelement.png');
@@ -126,19 +126,20 @@ body {
 
 #shop-zone {
     position: fixed;
-    left: -600px; /* Сначала панель скрыта */
+    left: -600px;
     top: 0;
     width: 600px;
     height: 100%;
     background-color: transparent;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    transition: left 0.3s ease-in-out; /* Плавное движение */
-    overflow-y: auto; /* Добавляем прокрутку */
+    transition: left 0.3s ease-in-out;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 #shop-zone.open {
-    left: 0; /* Панель перемещается на 0px слева, открываясь */
+    left: 0;
 }
 
 .upgrade-item {
@@ -146,18 +147,22 @@ body {
     align-items: center;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #fff;
+    background-image: url(assets/fonBuy.jpg);
+    background-size: cover;
     border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-top: 100px;
     cursor: pointer;
-    
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .upgrade-info {
     flex: 1;
     padding-right: 10px;
+    color: white;
 }
 
 #shop-zone img {
@@ -169,13 +174,19 @@ body {
     animation: clickFlash 0.3s ease;
 }
 
-@keyframes cliskFlash {
-    0% {transform: scale(1);
-    background-color: white;}
-    50% {transform: scale(1.05);
-    background-color: #d4ffd4;}
-    100% {transform: scale(1);
-    background-color: white;}
+@keyframes clickFlash {
+    0% {
+        transform: scale(1);
+        background-color: white;
+    }
+    50% {
+        transform: scale(1.05);
+        background-color: #d4ffd4;
+    }
+    100% {
+        transform: scale(1);
+        background-color: white;
+    }
 }
 
 
