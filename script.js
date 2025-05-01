@@ -14,26 +14,47 @@ const clickPowerDisplay = document.getElementById('click-power');
 const passiveIncomeDisplay = document.getElementById('passive-income');
 
 let isMuted = false;
+let totalClicks = 0;
 let clicks = 0;
 let clickPower = 1;
 let passiveIncome = 0;
 let level = 1;
 const clicksPerLevel = 500;
+let currentEnergyImage = 'assets/energy-0.png';
 
-// Обновление прогресса и уровня
+function updateEnergyImage() {
+    const stage = Math.floor(level / 10); // от 0 до 10
+    currentEnergyImage = `assets/energy-${stage}.png`;
+}
+
 function updateProgressAndLevel() {
     const progress = (clicks % clicksPerLevel) / clicksPerLevel * 100;
     progressBar.style.width = `${progress}%`;
+
     const newLevel = Math.floor(clicks / clicksPerLevel) + 1;
     if (newLevel !== level) {
         level = newLevel;
         levelText.textContent = `Уровень ${level}`;
+        updateEnergyImage();
+    }
+}
+
+function updateProgressAndLevel() {
+    const progress = (totalClicks % clicksPerLevel) / clicksPerLevel * 100;
+    progressBar.style.width = `${progress}%`;
+
+    const newLevel = Math.floor(totalClicks / clicksPerLevel) + 1;
+    if (newLevel !== level) {
+        level = newLevel;
+        levelText.textContent = `Уровень ${level}`;
+        updateEnergyImage();
     }
 }
 
 // Клик по монстру
 monster.addEventListener('click', (e) => {
     clicks += clickPower;
+    totalClicks += clickPower;
     counter.textContent = clicks;
     updateProgressAndLevel();
 
@@ -43,7 +64,7 @@ monster.addEventListener('click', (e) => {
     }
 
     const energy = document.createElement('img');
-    energy.src = 'assets/monster-clickelement.png';
+    energy.src = currentEnergyImage;
     energy.className = 'energy';
     energy.style.left = `${e.clientX}px`;
     energy.style.top = `${e.clientY}px`;
@@ -104,6 +125,7 @@ document.querySelectorAll('.upgrade-item').forEach(item => {
 // Пассивный доход каждую секунду
 setInterval(() => {
     clicks += passiveIncome;
+    totalClicks += passiveIncome;
     counter.textContent = clicks;
     updateProgressAndLevel();
 }, 1000);
