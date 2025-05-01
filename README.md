@@ -1,5 +1,5 @@
 # Clicker game Magnetar
 # Interface =>
-![My Image](AssetsForReadME/screenshotMain.jpg)
+![My Image](assetsForReadME/screenshotMain.jpg)
 # Store Features =>
-![My Image](AssetsForReadME/screenshot2.jpg)
+![My Image](assetsForReadME/screenshot2.jpg)
