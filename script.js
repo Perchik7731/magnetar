@@ -20,12 +20,12 @@ let clickPower = 1;
 let passiveIncome = 0;
 let level = 1;
 const clicksPerLevel = 500;
-let currentEnergyImage = 'assets/energy-0.png';
+// let currentEnergyImage = 'assets/energy-0.png';
 
-function updateEnergyImage() {
-    const stage = Math.floor(level / 10); // от 0 до 10
-    currentEnergyImage = `assets/energy-${stage}.png`;
-}
+// function updateEnergyImage() {
+//     const stage = Math.floor(level / 10); // от 0 до 10
+//     currentEnergyImage = `assets/energy-${stage}.png`;
+// }
 
 function updateProgressAndLevel() {
     const progress = (clicks % clicksPerLevel) / clicksPerLevel * 100;
