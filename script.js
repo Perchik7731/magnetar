@@ -21,7 +21,7 @@ let clickPower = 1;
 let passiveIncome = 0;
 let level = 1;
 const clicksPerLevel = 500;
-// let currentEnergyImage = 'assets/energy-0.png';
+let currentEnergyImage = 'assets/energy-10.png';
 
 // function updateEnergyImage() {
 //     const stage = Math.floor(level / 10); // от 0 до 10
@@ -111,8 +111,8 @@ document.querySelectorAll('.upgrade-item').forEach(item => {
             }
 
              // Воспроизводим звук покупки
-             buySound.currentTime = 0; // Чтобы звук играл заново, если клики быстрые
-             buySound.play();
+            buySound.currentTime = 0; // Чтобы звук играл заново, если клики быстрые
+            buySound.play();
             // Увеличение стоимости и обновление в DOM
             cost = Math.floor(cost * 1.5);
             item.setAttribute('data-cost', cost);
